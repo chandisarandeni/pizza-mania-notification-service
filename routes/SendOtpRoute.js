@@ -1,5 +1,5 @@
 import express from "express";
-import sendOtp from "../controllers/SendOtpRoute.js";
+import sendOtp from "../controllers/SendOtpController.js";
 
 const SendOtpRoute = express.Router();
 
