@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 
 import SendOtp from "./routes/SendOtpRoute.js";
+import SendWelcome from "./routes/SendWelcomeRoute.js";
 
 dotenv.config();
 
@@ -12,8 +13,10 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Routes
 app.use("/api/v1/notifications", SendOtp);
+app.use("/api/v1/notifications", SendWelcome);
 
 app.listen(PORT, () => {
-  console.log("server is running on port " + PORT);
+  console.log("✅ Server is running on port " + PORT);
 });
